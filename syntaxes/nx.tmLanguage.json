@@ -18,6 +18,9 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#functions"
+		},
+		{
 			"include": "#variables"
 		},
 		{
@@ -31,9 +34,15 @@
 				"match": "'.*$"
 			}]
 		},
+		"functions": {
+			"patterns": [{
+				"name": "entity.name.function.nx",
+				"match": "(?<=\\b(SUB|CALL)\\s+)[A-Za-z_][A-Za-z0-9_]*"
+			}]
+		},
 		"variables": {
 			"patterns": [{
-				"name": "variable.name",
+				"name": "variable.name.nx",
 				"match": "[A-Za-z_][A-Za-z0-9_]*"
 			}]
 		},
