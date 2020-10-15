@@ -6,8 +6,3 @@ This extension adds laguage support into Visual Studio Code for the fantasy cons
 
 Currently the extention only supports syntax highlighting, code folding, and auto-indentation support.
 
-## Release Notes
-
-### 0.0.1
-
-Initial release of extension
