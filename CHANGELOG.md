@@ -2,6 +2,11 @@
 
 All notable changes to the "lowres-nx" extension will be documented in this file.
 
+## Unreleased
+- Added support to REM style comments (@rilden)
+- Added floating number point support (@rilden)
+- Enforced that comments need to start on a new line (@rilden)
+
 ## 0.0.1
 - Initial release
 
