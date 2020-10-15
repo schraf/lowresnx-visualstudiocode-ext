@@ -2,7 +2,7 @@
     "name": "lowres-nx",
     "displayName": "LowRes NX",
     "description": "Language support for LowRes NX Basic.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "schraf",
     "repository": {
         "type": "git",
