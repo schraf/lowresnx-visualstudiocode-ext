@@ -28,7 +28,7 @@
 		"comments": {
 			"patterns": [{
 				"name": "comment.line.nx",
-				"match": "'.*$"
+				"match": "('|REM ).*$"
 			}]
 		},
 		"variables": {
