@@ -3,6 +3,7 @@
     "displayName": "LowRes NX",
     "description": "Language support for LowRes NX Basic.",
     "version": "0.0.1",
+    "publisher": "schraf",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/schraf/lowresnx-visualstudiocode-ext.git"
