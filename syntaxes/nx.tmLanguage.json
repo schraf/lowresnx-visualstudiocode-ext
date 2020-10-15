@@ -31,7 +31,7 @@
 		"comments": {
 			"patterns": [{
 				"name": "comment.line.nx",
-				"match": "'.*$"
+				"match": "^\\s*('|REM ).*$"
 			}]
 		},
 		"functions": {
@@ -83,7 +83,7 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.nx",
-					"match": "-?\\d+"
+					"match": "-?\\d+(\\.\\d*)?"
 				},
 				{
 					"name": "constant.numeric.nx",
