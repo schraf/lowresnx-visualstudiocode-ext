@@ -1,0 +1,35 @@
+{
+    "name": "lowres-nx",
+    "displayName": "LowRes NX",
+    "description": "Language support for LowRes NX Basic.",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/schraf/lowresnx-visualstudiocode-ext.git"
+    },
+    "author": "Marc Schraffenberger",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/schraf/lowresnx-visualstudiocode-ext/issues"
+    },
+    "homepage": "https://github.com/schraf/lowresnx-visualstudiocode-ext#readme",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nx",
+            "aliases": ["LowRes NX Basic", "nx"],
+            "extensions": [".nx"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nx",
+            "scopeName": "source.nx",
+            "path": "./syntaxes/nx.tmLanguage.json"
+        }]
+    }
+}

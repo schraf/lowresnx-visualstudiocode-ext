@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LowRes NX Basic",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#romdefine"
+		},
+		{
+			"include": "#romdata"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#numerics"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.nx",
+				"match": "'.*$"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.name",
+				"match": "[A-Za-z_][A-Za-z0-9_]*"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nx",
+				"match": "\\b(ABS|ACOS|ADD|AND|ASC|ASIN|ATAN|ATTR|BG|BIN\\$|BUTTON|CALL|CELL\\.A|CELL\\.C|CELL|CHAR|CHR\\$|CLS|CLW|COLOR|COPY|COS|DATA|DEC|DIM|DISPLAY|DO|DOWN|ELSE|END|ENVELOPE|EXIT|EXP|FILE\\$|FILES|FILL|FLIP|FONT|FOR|FSIZE|GAMEPAD|GLOBAL|GOSUB|GOTO|HCOS|HEX\\$|HIT|HSIN|HTAN|IF|INC|INKEY\\$|INPUT|INSTR|INT|KEYBOARD|LEFT\\$|LEFT|LEN|LET|LFO\\.A|LFO|LOAD|LOCATE|LOG|LOOP|MAX|MCELL\\.A|MCELL\\.C|MCELL|MID\\$|MIN|MOD|MUSIC|NEXT|NOT|NUMBER|OFF|ON|OPTIONAL|OR|PAL|PALETTE|PAUSE|PEEK|PEEKL|PEEKW|PI|PLAY|POKE|POKEL|POKEW|PRINT|PRIO|RANDOMIZE|RASTER|READ|REM|REPEAT|RESTORE|RETURN|RIGHT\\$|RIGHT|RND|ROL|ROM|ROR|SAVE|SCROLL\\.X|SCROLL\\.Y|SCROLL|SGN|SIN|SIZE|SOUND|SOURCE|SPRITE\\.A|SPRITE\\.C|SPRITE\\.X|SPRITE\\.Y|SPRITE|SQR|STEP|STOP|STR\\$|SUB|SWAP|SYSTEM|TAN|TAP|TEXT|THEN|TIMER|TINT|TO|TOUCH\\.X|TOUCH\\.Y|TOUCH|TOUCHSCREEN|TRACE|TRACK|UNTIL|UP|VAL|VBL|VIEW|VOLUME|WAIT|WAVE|WEND|WHILE|WINDOW|XOR)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.nx",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nx",
+					"match": "\\\\."
+				}
+			]
+		},
+		"romdefine": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.nx",
+					"match": "^#[0-9]+:.*$"
+				}
+			]
+		},
+		"romdata": {
+			"patterns": [
+				{
+					"name": "constant.numeric.nx",
+					"match": "^[A-Fa-f0-9]+$"
+				}
+			]
+		},
+		"numerics": {
+			"patterns": [
+				{
+					"name": "constant.numeric.nx",
+					"match": "-?\\d+"
+				},
+				{
+					"name": "constant.numeric.nx",
+					"match": "\\$[a-fA-F0-9]+"
+				},
+				{
+					"name": "constant.numeric.nx",
+					"match": "%[01]+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.nx"
+}
