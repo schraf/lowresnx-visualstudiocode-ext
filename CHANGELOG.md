@@ -2,6 +2,9 @@
 
 All notable changes to the "lowres-nx" extension will be documented in this file.
 
+## unreleased
+- Added icon
+
 ## 0.0.1
 - Initial release
 
