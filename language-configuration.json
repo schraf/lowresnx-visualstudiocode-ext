@@ -24,7 +24,7 @@
         }
     },
     "indentationRules": {
-        "increaseIndentPattern": "^((?!').)*\\b((?<!END\\s+)SUB|(?<!END\\s+)IF|ELSE|FOR|DO|REPEAT|WHILE)\\b.*$",
+        "increaseIndentPattern": "^(?!\\s*('|REM\\b)).*\\bTHEN\\s*$|^\\s*(SUB|ELSE|FOR|DO|REPEAT|WHILE)\\b",
         "decreaseIndentPattern": "^\\s*\\b(END\\s+SUB|END\\s+IF|NEXT|ELSE|LOOP|UNTIL|WEND)\\b.*$"
     }
 }
