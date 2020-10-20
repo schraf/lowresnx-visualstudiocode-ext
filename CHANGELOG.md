@@ -19,3 +19,6 @@ All notable changes to the "lowres-nx" extension will be documented in this file
 - Fix auto-indentation for single line if statements (@rilden)
 - Fix comments regular expression for REM lines to not require a blank space (@rilden)
 
+## 0.0.5
+- Added icon
+- Fixed issue where multiple global arrays defined on a single line were not working with symbols.
