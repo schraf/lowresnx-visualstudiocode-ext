@@ -13,7 +13,7 @@ class LowResNXDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
       const functionRE = new RegExp("(?<!'.*)(?<=\\bSUB\\s+)([A-Za-z_][A-Za-z0-9_]*)")
       const labelRE = new RegExp('^([A-Za-z_][A-Za-z0-9_]*)(?=:)')
       const romRE = new RegExp("^#[0-9]+:([^']*)")
-      const globalRE = new RegExp('^(?:\\bDIM\\s+)?\\bGLOBAL\\s+([A-Za-z_][A-Za-z0-9_, \\t]*)+')
+      const globalRE = new RegExp('^(?:\\bDIM\\s+)?\\bGLOBAL\\s+((?:[A-Za-z_][A-Za-z0-9_]*\\s*(?:\\([0-9]+\\))?(?:[, \\t]*)?)+)')
 
       for (var i = 0; i < document.lineCount; i++) {
         const line = document.lineAt(i)
