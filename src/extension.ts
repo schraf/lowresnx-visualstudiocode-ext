@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import * as vscode from 'vscode'
 import * as child_process from 'child_process'
 
@@ -9,7 +11,7 @@ export function activate (context: vscode.ExtensionContext) {
   context.subscriptions.push(vscode.commands.registerCommand('lowResNX.runFile', () => {
     const filename = vscode.window.activeTextEditor?.document.fileName
     const cfg = vscode.workspace.getConfiguration('lowResNX')
-    const args = Array<string>()
+    const args = []
 
     args.push('-fullscreen')
     args.push(cfg.run.fullScreen ? 'yes' : 'no')
@@ -44,7 +46,7 @@ export function activate (context: vscode.ExtensionContext) {
     const process = child_process.spawn('LowRes NX', args)
 
     process.on('error', () => {
-      vscode.window.showInformationMessage('Failed to start LowRes NX. Check that it is in your PATH');
+      vscode.window.showInformationMessage('Failed to start LowRes NX. Check that it is in your PATH')
     })
   }))
 }
