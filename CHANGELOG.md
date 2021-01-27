@@ -22,3 +22,7 @@ All notable changes to the "lowres-nx" extension will be documented in this file
 ## 0.0.5
 - Added icon
 - Fixed issue where multiple global arrays defined on a single line were not working with symbols.
+
+## 0.0.6
+- Adding run command to start LowRes NX from command palette
+- Adding some extension settings for new run command

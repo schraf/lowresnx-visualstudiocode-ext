@@ -1,9 +1,52 @@
 import * as vscode from 'vscode'
+import * as child_process from 'child_process'
 
 export function activate (context: vscode.ExtensionContext) {
   context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(
     { language: 'nx' }, new LowResNXDocumentSymbolProvider()
   ))
+
+  context.subscriptions.push(vscode.commands.registerCommand('lowResNX.runFile', () => {
+    const filename = vscode.window.activeTextEditor?.document.fileName
+    const cfg = vscode.workspace.getConfiguration('lowResNX')
+    const args = Array<string>()
+
+    args.push('-fullscreen')
+    args.push(cfg.run.fullScreen ? 'yes' : 'no')
+
+    args.push('-disabledev')
+    args.push(cfg.run.disableDelay ? 'yes' : 'no')
+
+    args.push('-disabledelay')
+    args.push(cfg.run.disableDev ? 'yes' : 'no')
+
+    args.push('-zoom')
+
+    switch (cfg.run.zoom) {
+      case 'large':
+        args.push('1')
+        break
+      case 'overscan':
+        args.push('2')
+        break
+      case 'squeeze':
+        args.push('3')
+        break
+      default:
+        args.push('0')
+        break
+    }
+
+    if (filename) {
+      args.push(filename)
+    }
+
+    const process = child_process.spawn('LowRes NX', args)
+
+    process.on('error', () => {
+      vscode.window.showInformationMessage('Failed to start LowRes NX. Check that it is in your PATH');
+    })
+  }))
 }
 
 class LowResNXDocumentSymbolProvider implements vscode.DocumentSymbolProvider {

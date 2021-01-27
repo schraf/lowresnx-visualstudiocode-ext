@@ -2,7 +2,7 @@
     "name": "lowres-nx",
     "displayName": "LowRes NX",
     "description": "Language support for LowRes NX Basic.",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "schraf",
     "icon": "images/icon.png",
     "repository": {
@@ -41,10 +41,49 @@
                 "scopeName": "source.nx",
                 "path": "./syntaxes/nx.tmLanguage.json"
             }
-        ]
+        ],
+        "commands": [
+            {
+                "command": "lowResNX.runFile",
+                "title": "Run File",
+                "category": "LowRes NX"
+            }
+        ],
+        "configuration": {
+            "title": "LowRes NX",
+            "properties": {
+                "lowResNX.run.fullScreen": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Start the application in fullscreen mode."
+                },
+                "lowResNX.run.disableDelay": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Disable the delay for too short frames."
+                },
+                "lowResNX.run.disableDev": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Disable the Development Menu, Esc key quits LowRes NX."
+                },
+                "lowResNX.run.zoom": {
+                    "type": "string",
+                    "default": "pixel perfect",
+                    "enum": [
+                        "pixel perfect",
+                        "large",
+                        "overscan",
+                        "squeeze"
+                    ],
+                    "description": "Start the application in zoom mode."
+                }
+            }
+        }
     },
     "activationEvents": [
-        "onLanguage:nx"
+        "onLanguage:nx",
+        "onCommand:lowResNX.runFile"
     ],
     "main": "./out/extension.js",
     "scripts": {
